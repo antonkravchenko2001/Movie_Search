@@ -1,0 +1,14 @@
+search:
+  symmetric:
+    checkpoint_path:
+      './algorithms/search/checkpoints/quora_check_point'
+    index_path:
+      './algorithms/search/indexes/quora_index.ann'
+  asymmetric:
+    checkpoint_path:
+      './algorithms/search/checkpoints/msmarco_check_point'
+    index_path:
+      './algorithms/search/indexes/msmarco_index.ann'
+auto_complete:
+  root_path:
+    './algorithms/autocomplete/movie_titles_trie.json'

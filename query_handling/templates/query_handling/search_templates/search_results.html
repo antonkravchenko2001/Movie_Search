@@ -1,0 +1,31 @@
+
+{% extends './query_form.html' %}
+{% block title%}search results{% endblock %}
+{% block body %}
+    <div class="container-fluid">
+        <div class="d-flex justify-content-center align-items-center">
+            <div class="row col-sm-10 col-lg-8 col-xxl-7">
+                {% for key, value in search_results.items %}
+                    <div class="button-box">
+                        <button class="selection-button" name="movie_selection">
+                            <span name="movie_id" class="movie-id">{{value.id}}</span>
+                            <p name="movie_title" class="movie-title">
+                                {% if value.release_date%}
+                                    {{value.title}} ({{value.release_date}})
+                                {% else %}
+                                    {{value.title}}
+                                {% endif %}
+                            </p>
+                            <p name="movie_plot" class="movie-plot">
+                                {{value.plot|truncatechars:200}}
+                            </p>
+                        </button>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    {% block scripts %}
+        <script src="/static/query_handling/javascipt_files/movie_selection.js"></script>
+    {% endblock %}
+{% endblock %}
