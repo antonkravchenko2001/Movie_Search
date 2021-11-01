@@ -101,8 +101,8 @@ def find(id:int) -> dict:
     res['release_date'] = prepare_date(movie.release_date)
     res['duration'] = movie.duration
     res['box_office'] = movie.box_office
-    res['countries'] = movie.countries
-    res['genre'] = movie.genre
+    res['countries'] = eval(movie.countries)
+    res['genre'] = eval(movie.genre)
     res['plot'] = movie.plot
     return res
 
