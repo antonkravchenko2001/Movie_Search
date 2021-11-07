@@ -9,10 +9,6 @@ td {
     vertical-align:top;
 }
 
-.height {
-    height: 100vh
-}
-
 .form-position {
     position: absolute;
     width: 100%;
@@ -34,7 +30,7 @@ td {
     top: 18px;
     left: 20px;
     color: #9ca3af;
-    font-size: 0.8em;
+    font-size: 0.8rem;
 }
 
 
@@ -42,7 +38,7 @@ td {
     height: 45px;
     border:none;
     padding:5px;
-    font-size:1em;
+    font-size:1rem;
 }
 
 .form-input:focus {
@@ -50,56 +46,57 @@ td {
     border: none
 }
 
-.form li button {
-    width: 100%;
-    height: 40px;
+.auto-button {
+    max-width: 100%;
     background: #fff;
     text-align:left;
     padding: 5px;
     border:none;
-    font-size:1em;
+    font-size:1rem;
 }
 
 .centering {
     margin: 0 auto;
     position: relative;
 }
+.auto-result {
+    display:flex;
+    flex-direction:column;
+}
 
 .button-box {
-    position: relative;
     margin:10px;
 }
 
-
 .selection-button {
-    background: #fff;
-    border:none;
-    border-radius:25px;
-    height: 150px;
-    margin: auto;
-    width: 100%;
-    text-align:left;
-    box-shadow: 0px 0px 2rem 0.1rem rgb(220, 220, 220);
-}
+        position: relative;
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        background: #fff;
+        border:none;
+        border-radius: 15px;
+        box-shadow: 0px 0px 2rem 0.1rem rgb(220, 220, 220);
+        padding: 10px;
+    }
 
 .movie-id {
     position: absolute;
-    left: 25px;
+    right: 25px;
     top: 10px;
-    font-size: 1em;
+    font-size: 1rem;
 }
 
 .movie_title {
-    font-size: 1.2em;
+    font-size: 1.2rem;
     font-weight: 500;
     padding: 10px;
 }
 
 .movie-title {
-    position: absolute;
-    left: 6em;
-    height: 50px;
-    top: 10px;
+    max-width:70%;
     font-size: 1.1rem;
     font-weight: 600;
 }
@@ -111,10 +108,6 @@ td {
 }
 
 .movie-plot {
-    position: absolute;
-    left: 6em;
-    right: 5%;
-    top: 50px;
     font-size: 1.1rem;
 }
 
@@ -131,4 +124,17 @@ td {
     margin-left: 10px;
     padding: 10px;
     box-shadow: 0 0 2rem 0.1rem rgb(220 220 220);
+}
+
+
+@media screen and (max-width: 600px) {
+    html {
+        font-size: 15px;
+    }
+}
+
+@media screen and (min-width: 600px){
+    html {
+        font-size: 16px;
+    }
 }
