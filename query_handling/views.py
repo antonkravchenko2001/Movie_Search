@@ -1,9 +1,7 @@
-from django.http.request import QueryDict
-from rest_framework.serializers import Serializer
 from algorithms.search.search_models import SymmetricModel, AsymmetricModel
 from algorithms.autocomplete.trie import Trie
 from django.shortcuts import redirect, render
-from query_handling.models import MoviesInfo
+from .models import MoviesInfo
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from .forms import MoviesForm
@@ -73,7 +71,9 @@ def get_autocomplete(request):
 
 def search(query, num_return = 20):
     trie = Trie()
-    if trie.has_word(query):
+    containes_query = trie.has_word(query)
+    if containes_query:
+        query = containes_query
         search_model = SymmetricModel()
         model = search_model.model
         index = search_model.index

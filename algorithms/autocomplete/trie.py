@@ -17,19 +17,22 @@ class Trie:
     
     def has_word(self, word):
         node = self.root
-        for char in word:
-            if char not in node:
+        words = self.get_prefixes(node, word, 0)
+        for word in words:
+            node = self.root
+            for char in word:
+                if char not in node:
+                    return False
+                node = node[char]
+            if 'is_word' not in node:
                 return False
-            node = node[char]
-        if 'is_word' not in node:
-            return False
-        return True
+            else:
+                return word
 
     def match_prefix(self, prefix, k=10):
         if not prefix.isspace() and prefix:
             node = self.root
             prefixes = self.get_prefixes(node, prefix, 0)
-            print(prefixes)
             matches = []
             for pref in prefixes:
                 node = self.root
@@ -79,6 +82,6 @@ class Trie:
 
 
 def autocomplete_config():
-    with open('./algorithms/algorithms_config.yaml') as f:
+    with open('algorithms/algorithms_config.yaml') as f:
         config = yaml.safe_load(f)
     return config['auto_complete']
