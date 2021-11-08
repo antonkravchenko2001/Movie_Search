@@ -4,55 +4,57 @@
     <div class="container-fluid">
         <div class="d-flex justify-content-center align-items-center">
             <div class="row col-sm-10 col-lg-7 col-xxl-5">
-                <div style="margin-top: 30%; margin-bottom: 15%; box-shadow: 0 0 2rem 0.1rem rgb(220 220 220);padding: 10px; border-radius: 25px; letter-spacing: 0.05rem;background:#fff">
-                    <div class="movie_title">{{movie.title}}</div>
-                    <div class="movie_info">
-                        <table>
-                            {% if movie.genre %}
-                                <tr>
-                                <td style="font-weight:400">genre</td>
-                                <td>
-                                    {% for genre in movie.genre%}
-                                        <li>{{genre}}</li>
-                                    {% endfor %}
-                                </td>
-                                </tr>
-                            {% endif %}
-
-                            {% if movie.duration%}
-                                <tr>
-                                    <td style="font-weight:400">duration</td>
-                                    <td>{{movie.duration}}</td>
-                                </tr>
-                            {% endif %}
-
-                            {% if movie.release_date%}
-                                <tr>
-                                    <td style="font-weight:400">release date</td>
-                                    <td>{{movie.release_date}}</td>
-                                </tr>
-                            {% endif %}
-
-                            {% if movie.box_office %}
-                                <tr>
-                                    <td style="font-weight:400">box office</td>
-                                    <td>{{movie.box_office}}</td>
-                                </tr>
-                            {% endif %}
-
-                            {% if movie.countries%}
-                                <tr>
-                                    <td style="font-weight:400">countries</td>
+                <div class="content" style="background: #fff;">
+                    <div class="movie-title">{{movie.title}}</div>
+                    <div>
+                        <div class="movie-info">
+                            <table>
+                                {% if movie.genre %}
+                                    <tr>
+                                    <td style="font-weight:400">genre</td>
                                     <td>
-                                        {% for country in movie.countries%}
-                                            <li>{{country}}</li>
+                                        {% for genre in movie.genre%}
+                                            <li>{{genre}}</li>
                                         {% endfor %}
                                     </td>
-                                </tr>
-                            {% endif %}
-                        </table>
+                                    </tr>
+                                {% endif %}
+
+                                {% if movie.duration%}
+                                    <tr>
+                                        <td style="font-weight:400">duration</td>
+                                        <td>{{movie.duration}}</td>
+                                    </tr>
+                                {% endif %}
+
+                                {% if movie.release_date%}
+                                    <tr>
+                                        <td style="font-weight:400">release date</td>
+                                        <td>{{movie.release_date}}</td>
+                                    </tr>
+                                {% endif %}
+
+                                {% if movie.box_office %}
+                                    <tr>
+                                        <td style="font-weight:400">box office</td>
+                                        <td>{{movie.box_office}}</td>
+                                    </tr>
+                                {% endif %}
+
+                                {% if movie.countries%}
+                                    <tr>
+                                        <td style="font-weight:400">countries</td>
+                                        <td>
+                                            {% for country in movie.countries%}
+                                                <li>{{country}}</li>
+                                            {% endfor %}
+                                        </td>
+                                    </tr>
+                                {% endif %}
+                            </table>
+                        </div>
+                        <div style="text-align:justify;">{{movie.plot}}</div>
                     </div>
-                    <div class="movie_plot">{{movie.plot}}</div>
                 </div>
             </div>
         </div>

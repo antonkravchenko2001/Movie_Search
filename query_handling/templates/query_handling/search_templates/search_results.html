@@ -4,9 +4,11 @@
 {% block body %}
     <div class="container-fluid">
         <div class="d-flex justify-content-center align-items-center">
-            <div class="row col-sm-10 col-lg-8 col-xxl-7">
-                {% for key, value in search_results.items %}
-                    <div class="button-box">
+            <div class="row col-sm-10 col-lg-8 col-xxl-7" style="background:#fff">
+                <div style="padding: 10px">search results for "{{query}}"</div>
+                <hr>
+                <div class="content" style="background: #fff;">
+                    {% for key, value in search_results.items %}
                         <button class="selection-button" name="movie_selection">
                             <span name="movie_id" class="movie-id">{{value.id}}</span>
                             <p name="movie_title" class="movie-title">
@@ -16,12 +18,12 @@
                                     {{value.title}}
                                 {% endif %}
                             </p>
-                            <p name="movie_plot" class="movie-plot">
+                            <p name="movie_plot">
                                 {{value.plot|truncatechars:150}}
                             </p>
                         </button>
-                    </div>
-                {% endfor %}
+                    {% endfor %}
+                </div>
             </div>
         </div>
     </div>

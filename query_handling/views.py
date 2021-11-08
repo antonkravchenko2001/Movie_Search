@@ -16,22 +16,23 @@ def title_view(request):
 def search_movies(request):
     if 'query' in request.GET.keys() and request.GET['query']:
         query = request.GET['query']
+        init_query = query
         search_results = search(query)
         return render(
             request,
             'query_handling/search_templates/search_results.html',
-            {'search_results': search_results})
+            {'search_results': search_results, "query": init_query})
 
     elif 'selection' in request.GET.keys() and request.GET['selection']:
         query = request.GET['selection']
+        init_query = query
         trie = Trie()
         word_count = trie.update_root(query)
-        print(word_count)
         search_results = search(query)
         return render(
             request,
             'query_handling/search_templates/search_results.html',
-            {'search_results': search_results})
+            {'search_results': search_results, "query": init_query})
     else:
         return render(
             request,
