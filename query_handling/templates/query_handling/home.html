@@ -9,18 +9,20 @@
     </head>
     <body>
         <div class="nav-bar">
-            <button><i class="fa fa-search" style="font-size:0.8rem"></i></button>
+            <div id="nav-search">
+                <button><i class="fa fa-search" style="font-size:0.8rem"></i></button>
+            </div>
             <div>
-                <button>Add movies</button>
-                <button>Home</button>
-                <button>About</button>
+                <button id="nav-add-movies">Add movies</button>
+                <button id="nav-home">Home</button>
+                <button id="nav-about">About</button>
             </div>
         </div>
         {% block body %}
             <div class="container-fluid">
                 <div class="row form-position d-flex justify-content-center align-items-center">
-                    <div class="col-sm-8 col-lg-5 col-xxl-4">
-                        <form autocomplete="off" action="/search/" method="get" class="form"> 
+                    <div id="form" class="col-sm-8 col-lg-5 col-xxl-4">
+                        <form autocomplete="off" action="/search/" method="get" class="form" style="box-shadow: 0 0 2rem 0.1rem rgb(220,220,220);"> 
                             <i class="fa fa-search"></i>
                             <input type="text" id="query" name="query" class="form-control form-input" placeholder="Search movies...">
                             <div id="result" class="auto-result"></div>
@@ -29,7 +31,8 @@
                 </div>
             </div>
             {% block scripts %}
-            <script src="/static/query_handling/javascipt_files/autocomplete.js"></script>
+                <script src="/static/query_handling/javascipt_files/autocomplete.js"></script>
+                <script src="/static/query_handling/javascipt_files/nav_bar.js"></script>
             {% endblock %}
         {% endblock %}
     </body>

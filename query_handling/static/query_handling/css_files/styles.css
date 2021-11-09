@@ -32,6 +32,8 @@ hr {
      background: #5e8fd9;
      color:#fff;
      border:none;
+     margin-left:10px;
+
 }
 
 .nav-bar button:hover{
@@ -55,7 +57,7 @@ hr {
 .form-position {
     position: absolute;
     width: 100%;
-    top: 40%;
+    top: 50%;
 }
 
 .form {
@@ -65,7 +67,10 @@ hr {
     background: #fff;
     padding-left: 40px;
     padding-right:25px;
-    box-shadow: 0 0 2rem 0.1rem rgb(220,220,220);
+}
+
+.form::placeholder{
+    font-size: 1em;
 }
 
 .form .fa-search {

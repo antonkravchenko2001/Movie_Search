@@ -1,5 +1,5 @@
 
-{% extends './query_form.html' %}
+{% extends './home.html' %}
 {% block title%}search results{% endblock %}
 {% block body %}
     <div class="container-fluid">
@@ -28,6 +28,7 @@
         </div>
     </div>
     {% block scripts %}
-        <script src="/static/query_handling/javascipt_files/movie_selection.js"></script>
+        <script src="/static/query_handling/javascipt_files/search_results.js"></script>
+        <script src="/static/query_handling/javascipt_files/nav_bar.js"></script>
     {% endblock %}
 {% endblock %}

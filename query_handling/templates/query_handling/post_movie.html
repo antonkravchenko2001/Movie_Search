@@ -1,0 +1,15 @@
+{% extends './home.html' %}
+   <title>{% block title %}Adding new movies to a database{% endblock%}</title>
+{% block body %}
+    <div class="row d-flex justify-content-center">
+        <div class="col-sm-8 col-lg-5 col-xxl-4">
+            <form method='post' class='content' action=''>
+                {%csrf_token%}
+                {{form}}
+            </form>
+        </div>
+    </div>
+    {% block scripts %}
+        <script src="/static/query_handling/javascipt_files/nav_bar.js"></script>
+    {% endblock %}
+{% endblock %}
