@@ -53,8 +53,7 @@ def post_movie_view(request):
     if request.method == 'POST':
         form = MoviesForm(request.POST)
         if form.is_valid():
-            form.save()
-            return redirect('/addmovies')
+            return redirect('/')
     return render(request, 'query_handling/post_movie.html', {'form': form})
 
 

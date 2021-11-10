@@ -3,13 +3,47 @@
 {% block body %}
     <div class="row d-flex justify-content-center">
         <div class="col-sm-8 col-lg-5 col-xxl-4">
-            <form method='post' class='content' action=''>
+            <form method='post' id="post_form" class='content' style="position:relative;background:#fff;padding:10px" action=''>
                 {%csrf_token%}
-                {{form}}
+                {{ form.non_field_errors }}
+                <div id='post_movie_id' class='content movie-submit-div'>
+                    <label>movie id:</label>
+                    {{ form.movie_id }}
+                    {{ form.movie_id.errors }}
+                </div>
+                <div id='post_title' class='content movie-submit-div'>
+                    <label>movie title:</label>
+                    {{ form.title }}
+                    {{ form.title.errors }}
+                </div>
+                <div id='post_plot' class='content movie-submit-div'>
+                    <label>movie plot:</label>
+                    {{ form.plot }}
+                    {{ form.plot.errors }}
+                </div>
+                <div id='post_duration' class='content movie-submit-div'>
+                    <label>duration:</label>
+                    {{ form.duration }}
+                    {{ form.plot.duration}}
+                </div>
+                <div id='post_box_office' class='content movie-submit-div'>
+                    <label>box office:</label>
+                    {{ form.duration }}
+                    {{ form.plot.duration}}
+                </div>
+                <div id='post_release_date' class='content movie-submit-div'>
+                    <label>release date:</label>
+                    {{ form.duration }}
+                    {{ form.plot.duration}}
+                </div>
+                <div class='movie-submit-div'>
+                    <input type="submit" value="Submit movie" class='movie-submit-input'>
+                </div>
             </form>
         </div>
     </div>
     {% block scripts %}
         <script src="/static/query_handling/javascipt_files/nav_bar.js"></script>
+        <script src="/static/query_handling/javascipt_files/movie_post.js"></script>
     {% endblock %}
 {% endblock %}

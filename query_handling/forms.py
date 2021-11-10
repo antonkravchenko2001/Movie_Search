@@ -12,23 +12,32 @@ class MoviesForm(forms.ModelForm):
             'release_date',
             'duration',
             'box_office',
-            'countries',
-            'genre',
             'plot',
         ]
+
+        widgets={
+            'movie_id': forms.NumberInput(attrs={'class': 'movie-submit'}),
+            'title': forms.TextInput(attrs={'class': 'movie-submit'}),
+            'plot': forms.Textarea(attrs={'class': 'movie-submit'}),
+            'duration': forms.TextInput(attrs={'class': 'movie-submit'}),
+            'box_office': forms.NumberInput(attrs={'class': 'movie-submit'}),
+            'release_date': forms.TextInput(attrs={'class': 'movie-submit'}),
+        }
+
+
     def clean_title(self):
         title = self.cleaned_data.get('title')
         if title == "":
-            raise forms.ValidationError("title can't be empy")
+            raise forms.ValidationError("title field is be empty")
         for instance in MoviesInfo.objects.all():
             if instance.title == title:
-                raise forms.ValidationError(f'There is a movie with title {title}')
+                raise forms.ValidationError(f'There exists a movie titled "{title}"')
         return title
     
     def clean_plot(self):
         plot = self.cleaned_data.get('plot')
         if plot == "":
-            raise forms.ValidationError("plot can't be empy")
+            raise forms.ValidationError("plot field is empty")
         return plot
     
 
