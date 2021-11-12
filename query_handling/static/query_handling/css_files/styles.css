@@ -35,8 +35,8 @@ hr {
      height:30px;
      color:#fff;
      border:none;
-     margin-left:12px;
-     padding:0px;
+     margin-left:9px;
+     padding: 3px;
 }
 
 .header button:hover{
@@ -252,7 +252,8 @@ hr {
     margin-top: 10px;
     text-align:center;
     min-width: 25%;
-    max-width:40%;
+    max-width: 80%;
+    padding: 8px;
 }
 
 
