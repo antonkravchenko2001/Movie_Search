@@ -1,3 +1,5 @@
+/* base styles */
+
 body {
     background: rgb(245 245 245);
 }
@@ -15,14 +17,11 @@ hr {
     border: 1px solid black;
 }
 
-*:focus {
-    outline: none;
-}
+
+/* header */
 
 
-
-
-.nav-bar {
+.header {
     padding: 25px;
     display:flex;
     flex-direction: row;
@@ -31,33 +30,35 @@ hr {
     margin-bottom: 5%;
 }
 
-.nav-bar button {
+.header button {
      background: #5e8fd9;
+     height:30px;
      color:#fff;
      border:none;
-     margin-left:10px;
+     margin-left:12px;
+     padding:0px;
 }
 
-.nav-bar button:hover{
+.header button:hover{
     background:#3e6093;
     box-shadow: 0 0 0.1rem 0.1rem #3e6093;
 }
-.nav-links {
+
+.header-group {
     display:flex;
 }
 
-.ham-nav {
+.hamburger {
     position:absolute;
-    top: 28px;
-    right: 20px;
+    top: 25px;
+    right: 25px;
     flex-direction: column;
     justify-content: space-between;
     width: 30px;
-    height: 21px;
     display:none;
 }
 
-.ham-nav .bar {
+.hamburger .bar {
     width: 100%;
     background: #fff;
     border-radius: 10px;
@@ -66,6 +67,47 @@ hr {
 
 
 
+/* header search bar */
+
+.header-form {
+    height: 30px;
+    max-width: 180px;
+    border-radius: 15px;
+    position: relative;
+    background: #fff;
+    padding-left: 30px;
+    padding-right: 15px;
+    box-shadow:0 0 0.5rem 0.01rem #3e6093;
+}
+
+.header-form::placeholder{
+    font-size: 0.7rem;
+}
+
+.header-search-icon {
+    position: absolute;
+    top: 11px;
+    left: 12px;
+    color: #9ca3af;
+    font-size: 0.8rem;
+}
+
+
+.header-form-input {
+    height: 100%;
+    border:none;
+    padding: 0px;
+    font-size: 0.8rem;
+    max-width: 100%;
+}
+
+.header-form-input:focus {
+    outline: none;
+    border: none;
+}
+
+
+/* content  */
 
 .content {
     display:flex;
@@ -75,6 +117,8 @@ hr {
 
 
 
+
+/* home search bar */
 
 .form-position {
     position: absolute;
@@ -131,7 +175,7 @@ hr {
 }
 
 
-
+/* movie selection button on the search page */
 
 .selection-button {
     position: relative;
@@ -222,23 +266,30 @@ hr {
 
 
 @media screen and (max-width: 550px){
-    .nav-bar{
+    .header{
         display:flex;
         flex-direction: column;
         justify-content: center;
         align-items:flex-start;
+        padding:20px;
     }
-    .nav-links {
+    .header-group {
         display: none;
         flex-direction: column;
         justify-content: center;
         align-items:flex-start;
+        margin:5px;
     }
-    .ham-nav {
+    .header-group.active {
         display:flex;
     }
-    .nav-links.active {
+    .header-group button {
+        margin: 5px;
+    }
+    .hamburger {
         display:flex;
+        top:20px;
+        right:20px
     }
 }
 @media screen and (max-width: 600px) {
@@ -252,4 +303,3 @@ hr {
         font-size: 17px;
     }
 }
-
