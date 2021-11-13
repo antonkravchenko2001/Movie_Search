@@ -39,10 +39,6 @@ hr {
      padding: 3px;
 }
 
-.header button:hover{
-    background:#3e6093;
-    box-shadow: 0 0 0.1rem 0.1rem #3e6093;
-}
 
 .header-group {
     display:flex;
@@ -113,6 +109,7 @@ hr {
     display:flex;
     flex-direction: column;
     justify-content:center;
+    background:#fff;
 }
 
 
@@ -207,7 +204,7 @@ hr {
 }
 
 .movie-title {
-    max-width:70%;
+    max-width:90%;
     font-size: 1.1rem;
     font-weight: 600;
     padding-bottom:10px;
@@ -216,7 +213,7 @@ hr {
 .movie-info {
     float:right;
     padding: 10px;
-    margin-left: 10px;
+    margin-left: 20px;
     box-shadow: inset 0 0 1rem 0.1rem rgb(230 230 230);
 }
 
@@ -302,5 +299,22 @@ hr {
 @media screen and (min-width: 600px){
     html {
         font-size: 17px;
+    }
+}
+
+@media screen and (max-width: 400px){
+    .movie-content {
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+        align-items:flex-start;
+
+    }
+
+    .movie-info {
+        margin:0px;
+        width:100%;
+
+        
     }
 }
