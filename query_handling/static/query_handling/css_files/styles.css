@@ -10,6 +10,7 @@ li {
 
 td {
     vertical-align:top;
+    padding: 5px;
 }
 
 hr {
@@ -82,10 +83,10 @@ hr {
 
 .header-search-icon {
     position: absolute;
-    top: 11px;
+    top: 10px;
     left: 12px;
     color: #9ca3af;
-    font-size: 0.8rem;
+    font-size: 0.7rem;
 }
 
 
@@ -222,7 +223,7 @@ hr {
     background: #fff;
     border:none;
     border-radius: 5px;
-    box-shadow: 0 0 1rem 0.1rem rgb(230 230 230);
+    box-shadow: 0 0 0.4rem 0.01rem rgb(230 230 230);
     border: 1px solid  rgb(0 0 0 / 35%);
     max-width: 90%;
     min-height:35px;
@@ -270,7 +271,6 @@ hr {
         justify-content: center;
         align-items:flex-start;
         padding:20px;
-        margin-bottom:0px;
     }
     .header-group {
         display: none;
@@ -295,6 +295,9 @@ hr {
     html {
         font-size: 16px;
     }
+    .header{
+        margin-bottom:0px;
+    }
 }
 
 @media screen and (min-width: 600px){
@@ -303,7 +306,7 @@ hr {
     }
 }
 
-@media screen and (max-width: 400px){
+@media screen and (max-width: 450px){
     .movie-content {
         display:flex;
         flex-direction:column;

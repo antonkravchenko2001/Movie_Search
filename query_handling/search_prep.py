@@ -34,7 +34,7 @@ def find(id:int) -> dict:
     res['title'] = movie.title
     res['release_date'] = prepare_date(movie.release_date)
     res['duration'] = movie.duration
-    res['box_office'] = movie.box_office
+    res['box_office'] = prepare_box_office(movie.box_office)
     res['countries'] = eval(movie.countries)
     res['genre'] = eval(movie.genre)
     res['plot'] = movie.plot
@@ -47,3 +47,8 @@ def prepare_date(date):
         print(cleaned_date)
         return cleaned_date[0]
     return date
+
+def prepare_box_office(box_office):
+    if box_office:
+        box_office = round(box_office / 1e6, 1)
+    return box_office
