@@ -11,14 +11,17 @@ def search(query, num_return = 20):
         search_model = SymmetricModel()
         model = search_model.model
         index = search_model.index
-        query = MoviesInfo.objects.get(title=query).plot
+        try:
+            query = MoviesInfo.objects.get(title=query).plot
+        except:
+            query = MoviesInfo.objects.filter(title=query)[0].plot
         v = model(query).flatten()
     else:
         search_model = AsymmetricModel()
         model = search_model.model
         index = search_model.index
         v = model([query]).flatten()
-    ids = index.get_nns_by_vector(v, num_return)
+    ids = index.get_nns_by_vector(v, num_return) 
     output = {}
     for i, id in enumerate(ids):
         res = find(id)

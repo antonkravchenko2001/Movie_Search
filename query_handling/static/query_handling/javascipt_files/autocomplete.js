@@ -1,4 +1,4 @@
-
+const form = document.getElementById("searh_form");
 const inp = document.getElementById("query");
 
 inp.addEventListener(
@@ -15,6 +15,11 @@ inp.addEventListener(
                 let search_url;
                 for(let match of matches){
                     list += "<li name=\"suggestion\">" + "<button name=\"autobutton\" type=\"button\">" + match  + "</button>" + "</li>";
+                }
+                if (matches.length > 0){
+                    form.style.cssText += "padding-bottom:25px;"
+                } else {
+                    form.style.cssText += "padding-bottom:0px;"
                 }
                 div.innerHTML = list;
                 let buttons = document.getElementsByName("autobutton");
